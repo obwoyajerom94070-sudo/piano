@@ -1,0 +1,98 @@
+/* Page */
+:root {
+  --bg: #e8eef3;
+  --ink: #1d2a36;
+  --key-border: #8a97a3;
+  --active: gold;
+}
+
+body {
+  margin: 0;
+  padding: 32px 16px;
+  font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  text-align: center;
+}
+
+h1 { margin: 0 0 8px; font-size: 2.2rem; }
+.hint { margin: 0 auto 16px; max-width: 60ch; }
+
+/* Last note display (bonus) */
+#last-note {
+  font-size: 3rem;
+  font-weight: bold;
+  height: 4rem;
+  line-height: 4rem;
+}
+
+.sound-select { display: inline-block; margin-bottom: 20px; }
+.sound-select select { font-size: 1rem; padding: 4px 8px; margin-left: 6px; }
+
+/* Piano: 8 keys x 60px + 7 gaps x 6px = 522px */
+.piano {
+  position: relative;
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  width: 522px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* White keys */
+.key {
+  width: 60px;
+  height: 200px;
+  box-sizing: border-box;
+  padding-top: 110px;
+  background: white;
+  border: 1px solid var(--key-border);
+  border-radius: 6px;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.05s, transform 0.05s;
+}
+
+.key kbd {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 2px 8px;
+  border: 1px solid var(--key-border);
+  border-radius: 4px;
+  background: #f3f5f7;
+  font-family: inherit;
+}
+
+/* Pressed look (required) */
+.key.active {
+  background: var(--active);
+  transform: translateY(3px);
+}
+
+/* Black keys (bonus) */
+.key.black {
+  position: absolute;
+  top: 0;
+  width: 36px;
+  height: 125px;
+  padding-top: 62px;
+  background: #1d2a36;
+  color: white;
+  border-color: #1d2a36;
+  z-index: 2;
+}
+.key.black kbd { color: var(--ink); }
+.key.black.active { background: #c9a400; }
+
+/* Song mode */
+.song { margin-top: 36px; }
+.song h2 { margin-bottom: 4px; }
+.letters { font-size: 1.5rem; letter-spacing: 0.1em; font-weight: bold; }
+
+/* Small screens: let the piano scroll sideways instead of breaking */
+@media (max-width: 560px) {
+  .piano { overflow-x: auto; justify-content: flex-start; padding-bottom: 8px; }
+}

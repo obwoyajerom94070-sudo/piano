@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Keyboard Piano</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>My Keyboard Piano</h1>
+  <p class="hint">Press A S D F G H J K to play (W E T Y U for sharps), or click the keys. Click the page once if you hear no sound.</p>
+
+  <!-- Bonus: show the last note played -->
+  <div id="last-note" aria-live="polite">&nbsp;</div>
+
+  <!-- Bonus: sound selector -->
+  <label class="sound-select">Sound
+    <select id="wave">
+      <option value="sine">Sine</option>
+      <option value="square">Square</option>
+      <option value="triangle">Triangle</option>
+      <option value="sawtooth">Sawtooth</option>
+    </select>
+  </label>
+
+  <div class="piano">
+    <!-- 8 white keys (required) -->
+    <div class="key" data-key="a">C<br>Do<br><kbd>A</kbd></div>
+    <div class="key" data-key="s">D<br>Re<br><kbd>S</kbd></div>
+    <div class="key" data-key="d">E<br>Mi<br><kbd>D</kbd></div>
+    <div class="key" data-key="f">F<br>Fa<br><kbd>F</kbd></div>
+    <div class="key" data-key="g">G<br>Sol<br><kbd>G</kbd></div>
+    <div class="key" data-key="h">A<br>La<br><kbd>H</kbd></div>
+    <div class="key" data-key="j">B<br>Ti<br><kbd>J</kbd></div>
+    <div class="key" data-key="k">C<br>Do<br><kbd>K</kbd></div>
+
+    <!-- Bonus: black keys (sharps) -->
+    <div class="key black" data-key="w" style="left: 45px;">C#<br><kbd>W</kbd></div>
+    <div class="key black" data-key="e" style="left: 111px;">D#<br><kbd>E</kbd></div>
+    <div class="key black" data-key="t" style="left: 243px;">F#<br><kbd>T</kbd></div>
+    <div class="key black" data-key="y" style="left: 309px;">G#<br><kbd>Y</kbd></div>
+    <div class="key black" data-key="u" style="left: 375px;">A#<br><kbd>U</kbd></div>
+  </div>
+
+  <!-- Bonus: song mode -->
+  <section class="song">
+    <h2>Song mode</h2>
+    <p>Play these letters in order:</p>
+    <p class="letters">D S A S D D D &nbsp; S S S &nbsp; D G G</p>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
